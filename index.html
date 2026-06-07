@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harum Bakery — Roti Homemade, Pizza & Korean Garlic Cheese Batam</title>
+<meta name="description" content="Harum Bakery Batam — Roti homemade, pizza pan, Korean garlic cheese, dan hampers premium. Fresh from oven setiap orderan!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#fef7eb; --orange:#ff8c42; --orange-soft:#ffb380; --yellow:#ffd56a;
+  --red:#e94560; --green:#5cb85c; --brown:#5a3a2a; --dark:#3a2a1a;
+  --white:#fff; --gray:#6a5a4a;
+  --ff-display:'Fredoka',sans-serif; --ff-body:'Quicksand',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);color:var(--dark);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:16px 32px;
+  border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;
+  transition:all .3s;border:none;cursor:pointer;font-family:var(--ff-body)
+}
+.btn-warm{background:var(--orange);color:#fff;box-shadow:0 4px 0 #d96d28}
+.btn-warm:hover{transform:translateY(-2px);box-shadow:0 6px 0 #d96d28;background:#ff7a2a}
+.btn-cream{background:var(--white);color:var(--dark);box-shadow:0 4px 0 var(--orange-soft);border:2px solid var(--orange-soft)}
+.btn-cream:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--orange)}
+.btn-outline{border:2px solid var(--orange);color:var(--orange);background:transparent}
+.btn-outline:hover{background:var(--orange);color:#fff}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;transition:.3s;background:transparent}
+nav.scrolled{background:rgba(254,247,235,.95);backdrop-filter:blur(16px);box-shadow:0 4px 20px rgba(0,0,0,.04)}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px}
+.logo{
+  font-family:var(--ff-display);font-size:1.4rem;font-weight:600;color:var(--dark);
+  text-decoration:none;display:flex;align-items:center;gap:6px
+}
+.logo .deco{
+  width:32px;height:32px;background:linear-gradient(135deg,var(--orange),var(--red));
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem
+}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:var(--dark);text-decoration:none;font-size:.85rem;font-weight:600;transition:.2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange)!important;color:#fff!important;padding:8px 20px;border-radius:50px!important}
+
+/* HERO */
+.hero{
+  padding:120px 0 80px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)
+}
+/* decorative blobs */
+.hero .blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.4;animation:float 8s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(5deg)}}
+.hero .b1{width:200px;height:200px;background:var(--orange-soft);top:100px;left:-50px;animation-delay:-2s}
+.hero .b2{width:300px;height:300px;background:var(--yellow);top:-100px;right:-100px;opacity:.3;animation-delay:-5s}
+.hero .b3{width:150px;height:150px;background:var(--red);bottom:50px;right:10%;opacity:.2;animation-delay:-8s}
+
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-tag-wrap{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.hero-tag-wrap .badge{background:rgba(255,255,255,.7);backdrop-filter:blur(8px);color:var(--dark);border:1px solid var(--orange-soft)}
+.hero h1{
+  font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:700;
+  line-height:1.1;margin-bottom:16px;letter-spacing:-.01em
+}
+.hero h1 .c1{color:var(--orange)}
+.hero h1 .c2{color:var(--red)}
+.hero .sub{
+  font-size:1.05rem;line-height:1.7;color:var(--gray);max-width:480px;margin-bottom:28px
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-visual .collage{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  position:relative
+}
+.hero-visual .collage .item{
+  border-radius:20px;overflow:hidden;
+  background:var(--orange-soft);aspect-ratio:1;
+  box-shadow:0 8px 30px rgba(255,140,66,.2);
+  border:4px solid #fff;
+  transition:.4s
+}
+.hero-visual .collage .item:hover{transform:translateY(-6px) rotate(2deg);box-shadow:0 16px 40px rgba(255,140,66,.3)}
+.hero-visual .collage .item img{width:100%;height:100%;object-fit:cover}
+.hero-visual .collage .item.big{grid-row:span 2}
+.hero-visual .collage .item.big img{height:100%;aspect-ratio:auto}
+.hero-sticker{
+  position:absolute;top:-20px;right:-20px;
+  background:var(--red);color:#fff;width:100px;height:100px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-size:.95rem;text-align:center;line-height:1;
+  transform:rotate(15deg);box-shadow:0 8px 24px rgba(233,69,96,.3);
+  border:4px solid #fff;z-index:2
+}
+.hero-sticker .small{font-size:.6rem;letter-spacing:1px;margin-top:2px}
+.hero-sticker-2{
+  position:absolute;bottom:-10px;left:-20px;
+  background:var(--yellow);color:var(--dark);
+  padding:10px 18px;border-radius:50px;
+  font-weight:700;font-size:.85rem;
+  box-shadow:0 4px 16px rgba(255,213,106,.4);
+  border:3px solid #fff;z-index:2
+}
+
+/* SECTION */
+section{padding:80px 0;position:relative}
+.section-head{text-align:center;margin-bottom:48px;max-width:640px;margin-left:auto;margin-right:auto}
+.section-tag{
+  display:inline-block;padding:6px 16px;border-radius:50px;
+  background:var(--orange-soft);color:var(--orange);
+  font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px
+}
+.section-title{
+  font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:600;
+  line-height:1.1;letter-spacing:-.01em;margin-bottom:12px
+}
+.section-title em{font-style:italic;color:var(--orange)}
+.section-sub{color:var(--gray);line-height:1.7;font-weight:400}
+
+/* FEATURES */
+.features{padding:60px 0;background:#fff}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
+.feat-card{
+  padding:24px;background:var(--cream);border-radius:20px;
+  border:2px dashed var(--orange-soft);
+  display:flex;align-items:center;gap:16px;transition:.3s
+}
+.feat-card:hover{background:#fff;border-style:solid;border-color:var(--orange);transform:translateY(-4px)}
+.feat-card .icon{
+  width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--red));
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#fff;flex-shrink:0
+}
+.feat-card .body h3{font-family:var(--ff-display);font-size:1rem;margin-bottom:2px}
+.feat-card .body p{font-size:.82rem;color:var(--gray);line-height:1.5}
+
+/* PRODUCTS */
+.products{background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.prod-card{
+  background:#fff;border-radius:24px;overflow:hidden;
+  border:2px solid var(--orange-soft);
+  transition:all .4s;position:relative
+}
+.prod-card:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 16px 48px rgba(255,140,66,.15);border-color:var(--orange)}
+.prod-card .img-wrap{height:220px;background:#fef0e0;overflow:hidden;position:relative}
+.prod-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.prod-card:hover .img-wrap img{transform:scale(1.1) rotate(2deg)}
+.prod-card .heart{
+  position:absolute;top:12px;right:12px;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;cursor:pointer
+}
+.prod-card .info{padding:20px}
+.prod-card h3{font-family:var(--ff-display);font-size:1.2rem;color:var(--dark);margin-bottom:4px}
+.prod-card p{color:var(--gray);font-size:.85rem;line-height:1.5;margin-bottom:10px}
+.prod-card .price-row{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px dashed var(--orange-soft)}
+.prod-card .price{color:var(--orange);font-weight:700;font-size:1.05rem}
+.prod-card .price small{font-size:.7rem;color:var(--gray);font-weight:400;display:block}
+.prod-card .emoji-tag{font-size:1.2rem}
+
+/* GALLERY */
+.gallery{background:#fff;padding:60px 0}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal-item{
+  aspect-ratio:1;border-radius:16px;overflow:hidden;
+  border:3px solid var(--cream);
+  transition:.3s
+}
+.gal-item:hover{transform:scale(1.05) rotate(2deg);border-color:var(--orange)}
+.gal-item img{width:100%;height:100%;object-fit:cover}
+
+/* TESTI */
+.testi{background:linear-gradient(135deg,var(--orange-soft),var(--yellow));padding:60px 0;text-align:center}
+.testi-card{max-width:540px;margin:32px auto 0;background:#fff;padding:32px;border-radius:24px;border:3px solid #fff;box-shadow:0 8px 30px rgba(255,140,66,.15)}
+.testi-card .stars{color:#ffc107;font-size:1.2rem;margin-bottom:12px}
+.testi-card blockquote{font-family:var(--ff-display);font-size:1.1rem;font-style:italic;line-height:1.6;color:var(--dark)}
+.testi-card cite{display:block;margin-top:12px;font-size:.85rem;font-style:normal;color:var(--orange);font-weight:600}
+
+/* ORDER */
+.order{background:#fff;text-align:center;padding:80px 0}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:600px;margin:32px auto}
+.contact-card{
+  padding:24px 16px;background:var(--cream);border-radius:20px;
+  border:2px solid var(--orange-soft);
+  transition:.3s
+}
+.contact-card:hover{border-color:var(--orange);background:#fff;transform:translateY(-4px)}
+.contact-card .icon{font-size:1.5rem;margin-bottom:6px}
+.contact-card .lbl{font-size:.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.contact-card .val{color:var(--dark);font-weight:700;font-size:.95rem}
+
+/* FOOTER */
+footer{background:var(--dark);color:#d4c5a0;padding:40px 0 20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--ff-display);color:var(--orange);margin-bottom:12px;font-size:1rem}
+footer p,footer a{color:#a09580;font-size:.85rem;line-height:2;text-decoration:none}
+footer a:hover{color:var(--orange)}
+.footer-bot{margin-top:32px;padding-top:24px;border-top:1px solid #5a4a3a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.75rem;color:#806f5a}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero .sub{margin:0 auto 28px}
+  .hero-tag-wrap,.hero-actions{justify-content:center}
+  .feat-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;text-align:center}
+  .nav-links{display:none}
+  .hero-visual{order:-1;max-width:400px;margin:0 auto}
+  .hero-sticker-2{left:10px;bottom:-10px}
+}
+@media(max-width:500px){
+  .prod-grid{grid-template-columns:1fr}
+  .hero-visual .collage{grid-template-columns:1fr}
+  .hero-visual .collage .item.big{grid-row:auto}
+  .hero-visual .collage .item.big img{height:100%;aspect-ratio:1}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="#" class="logo"><span class="deco">🥐</span> Harum Bakery</a>
+    <div class="nav-links">
+      <a href="#products">Menu</a>
+      <a href="#about">Tentang</a>
+      <a href="#order" class="nav-cta">💬 Pesan</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag-wrap">
+        <span class="badge">🥐 Roti Homemade</span>
+        <span class="badge">🍕 Pizza</span>
+        <span class="badge">🧀 Korean Garlic Cheese</span>
+      </div>
+      <h1>Fresh from <span class="c1">Oven</span>,<br><span class="c2">Tiap Hari</span> ✨</h1>
+      <p class="sub">Harum Bakery — spesialis roti homemade, pizza pan, dan Korean garlic cheese. Dibuat setelah orderan masuk, jadi selalu fresh. Pickup, delivery, atau via GoSend/Maxim.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/6289626880009?text=Halo%20Harum%20Bakery!%20Saya%20tertarik%20dengan%20produk%20kalian" class="btn btn-warm" target="_blank">💬 Order via WhatsApp</a>
+        <a href="#products" class="btn btn-outline">Lihat Menu</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-sticker">SEJAK<br><span class="small">2023</span></div>
+      <div class="collage">
+        <div class="item big">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/699818210_17888808501474548_1141345139184965909_n.webp?_nc_cat=105&ig_cache_key=Mzg5NTEzMjgwMjczMTIyNzAyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=VtqJDI1D4IkQ7kNvwFs7VSz&_nc_oc=AdrgrVsFiqJoTkZC2LhrcavBHCHXjuUY3E9IHPX-0CrN0QuP0t90Ikqy2yPtIrc10k4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af-0rwLP8cPijvgSIcQMaTNEK6VjxBJuFoly9QapbFznbw&oe=6A2AFE6B" alt="Harum Bakery chiffon" loading="lazy" />
+        </div>
+        <div class="item">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669714665_17884907268474548_1136591413512921473_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MTE4MDc5NjE1NTczNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTMwMC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tmEWs9fj2yAQ7kNvwGwPgF9&_nc_oc=AdqdkbwzV6NNyMbHVn3uPWBDPJYz1JHColVRsKlmHOsoKSfdj6PgKu8ud9lu1ZGRTBI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af9pq77yGMOs-e8JDwWkjA48I43LTtgIekkC-QJfKv_q-A&oe=6A2AF491" alt="Korean Garlic Cheese" loading="lazy" />
+        </div>
+        <div class="item">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/670152066_17884907178474548_8441461755360799463_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MDU3NzE4NTUwNTI3NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=GhWpH_hD35MQ7kNvwGqldmO&_nc_oc=AdpGaNuGI_reprZyb93r135LC_7q_mU3G_1ADTiFGZfdQ4HbuNWKnWsW58avzc8ABDM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af97jcPUH-EPxEg1xiTk0wwBDQgZiCb-DFn1j46BS4e8iQ&oe=6A2B101F" alt="Harum brownies" loading="lazy" />
+        </div>
+      </div>
+      <div class="hero-sticker-2">🔥 Fresh from oven</div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="icon">🥖</div>
+        <div class="body">
+          <h3>Fresh Baked</h3>
+          <p>Dipanggang setelah orderan masuk</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🚚</div>
+        <div class="body">
+          <h3>Delivery Ready</h3>
+          <p>GoSend / Maxim / Pickup sendiri</p>
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="icon">🏡</div>
+        <div class="body">
+          <h3>Homemade</h3>
+          <p>Dibuat di dapur sendiri, higienis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag">Menu Andalan</div>
+      <h2 class="section-title">Yang <em>Selalu Laris</em> 💕</h2>
+      <p class="section-sub">Menu-menu favorit pelanggan yang selalu repeat order. Fresh, enak, harga ramah di kantong.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/699818210_17888808501474548_1141345139184965909_n.webp?_nc_cat=105&ig_cache_key=Mzg5NTEzMjgwMjczMTIyNzAyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=VtqJDI1D4IkQ7kNvwFs7VSz&_nc_oc=AdrgrVsFiqJoTkZC2LhrcavBHCHXjuUY3E9IHPX-0CrN0QuP0t90Ikqy2yPtIrc10k4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af-0rwLP8cPijvgSIcQMaTNEK6VjxBJuFoly9QapbFznbw&oe=6A2AFE6B" alt="Bolu Lapsur" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Bolu LapSur</h3>
+          <p>Bolu lembut yang viral di TikTok! Lapis legit, manis pas, cocok untuk teman ngopi atau ngeteh. Best seller! 🏆</p>
+          <div class="price-row">
+            <div class="price">Mulai 35rb<small>per loyang</small></div>
+            <div class="emoji-tag">⭐</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669714665_17884907268474548_1136591413512921473_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MTE4MDc5NjE1NTczNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTMwMC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tmEWs9fj2yAQ7kNvwGwPgF9&_nc_oc=AdqdkbwzV6NNyMbHVn3uPWBDPJYz1JHColVRsKlmHOsoKSfdj6PgKu8ud9lu1ZGRTBI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af9pq77yGMOs-e8JDwWkjA48I43LTtgIekkC-QJfKv_q-A&oe=6A2AF491" alt="Korean Garlic Cheese" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Korean Garlic Cheese</h3>
+          <p>Roti dengan taburan bawang putih Korea dan keju mozzarella yang meleleh. Wangi dan bikin nagih! 🧄</p>
+          <div class="price-row">
+            <div class="price">Mulai 12rb<small>per pcs</small></div>
+            <div class="emoji-tag">🧀</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/670152066_17884907178474548_8441461755360799463_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MDU3NzE4NTUwNTI3NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=GhWpH_hD35MQ7kNvwGqldmO&_nc_oc=AdpGaNuGI_reprZyb93r135LC_7q_mU3G_1ADTiFGZfdQ4HbuNWKnWsW58avzc8ABDM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af97jcPUH-EPxEg1xiTk0wwBDQgZiCb-DFn1j46BS4e8iQ&oe=6A2B101F" alt="Pizza Pan" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Pizza Pan Diameter 18</h3>
+          <p>Pizza pan homemade dengan topping premium. Freshly baked — bisa request topping sendiri! 🍕</p>
+          <div class="price-row">
+            <div class="price">Mulai 75rb<small>pan 18cm</small></div>
+            <div class="emoji-tag">🍕</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669781869_17884907004474548_8186793493811673589_n.webp?_nc_cat=109&ig_cache_key=Mzg3NDEzOTE1NjU0MTIwNTMxNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=jjyrsfA6n6MQ7kNvwFiK-b2&_nc_oc=AdpyIEnP1gQ_O-99Qg2KD26I3MX_Q25OeDKpQR1c7aGRKuMWyOmjS1TS4KxxZbwItcs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af-9QEnSX9TsKo3KJW9bEr4_OdfhuegMkLOHyECPkfA3Dw&oe=6A2ADE81" alt="Cheesecake" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Cheesecake Premium</h3>
+          <p>Cheesecake lembut dengan topping buah atau cokelat. Creamy, lumer, dan bikin balik lagi! 🍰</p>
+          <div class="price-row">
+            <div class="price">Mulai 80rb<small>per box</small></div>
+            <div class="emoji-tag">🍰</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/640394917_17878247919474548_5805058546879405545_n.webp?_nc_cat=101&ig_cache_key=MzgzNzg3NTM1ODUyNDM2NDgxOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM3My5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Oh--iMA4Ou8Q7kNvwGzFT83&_nc_oc=AdrRqDE2cn-JKrjNbcHci24aD_IiJaWq7OR2Qjw7r37evginfVWFyefOjDJwvYvPHM8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af_OuAWWgfA-X-6INEGbqvQuHLdDEluW9x2zMaH0G7kMSA&oe=6A2AF014" alt="Brownies" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Brownies & Babka</h3>
+          <p>Brownies fudgy dan babka yang lembut dengan filling cokelat atau keju. Cocok untuk teman ngopi. ☕</p>
+          <div class="price-row">
+            <div class="price">Mulai 25rb<small>per box</small></div>
+            <div class="emoji-tag">🍫</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/640387541_17878247796474548_7134990614204755089_n.webp?_nc_cat=105&ig_cache_key=MzgzNzg3Mzg2MTU2ODgyNDc5NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTMwOC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=sV2p-QZ59MAQ7kNvwFU1lNf&_nc_oc=Adow8ogqx2zVJHqCQa5Sue7zhBa9MXNQmaNfamuMItNz7azwbXMxhseBYMu78-xYP4U&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af8xc3Mk1NqfwgBZD9rlGIXyg3arz69gD3Ck5-DUs4ORUw&oe=6A2AFEC9" alt="Hampers" loading="lazy" />
+          <div class="heart">♡</div>
+        </div>
+        <div class="info">
+          <h3>Hampers Premium</h3>
+          <p>Paket hampers cantik untuk Lebaran, natal, atau hadiah. Isi mix roti + cookies + brownies. 🎁</p>
+          <div class="price-row">
+            <div class="price">Mulai 95rb<small>per paket</small></div>
+            <div class="emoji-tag">🎁</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <div class="gal-grid">
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/699818210_17888808501474548_1141345139184965909_n.webp?_nc_cat=105&ig_cache_key=Mzg5NTEzMjgwMjczMTIyNzAyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=VtqJDI1D4IkQ7kNvwFs7VSz&_nc_oc=AdrgrVsFiqJoTkZC2LhrcavBHCHXjuUY3E9IHPX-0CrN0QuP0t90Ikqy2yPtIrc10k4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af-0rwLP8cPijvgSIcQMaTNEK6VjxBJuFoly9QapbFznbw&oe=6A2AFE6B" alt="" loading="lazy" /></div>
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669714665_17884907268474548_1136591413512921473_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MTE4MDc5NjE1NTczNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTMwMC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tmEWs9fj2yAQ7kNvwGwPgF9&_nc_oc=AdqdkbwzV6NNyMbHVn3uPWBDPJYz1JHColVRsKlmHOsoKSfdj6PgKu8ud9lu1ZGRTBI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af9pq77yGMOs-e8JDwWkjA48I43LTtgIekkC-QJfKv_q-A&oe=6A2AF491" alt="" loading="lazy" /></div>
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/670152066_17884907178474548_8441461755360799463_n.webp?_nc_cat=107&ig_cache_key=Mzg3NDE0MDU3NzE4NTUwNTI3NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=GhWpH_hD35MQ7kNvwGqldmO&_nc_oc=AdpGaNuGI_reprZyb93r135LC_7q_mU3G_1ADTiFGZfdQ4HbuNWKnWsW58avzc8ABDM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af97jcPUH-EPxEg1xiTk0wwBDQgZiCb-DFn1j46BS4e8iQ&oe=6A2B101F" alt="" loading="lazy" /></div>
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669781869_17884907004474548_8186793493811673589_n.webp?_nc_cat=109&ig_cache_key=Mzg3NDEzOTE1NjU0MTIwNTMxNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=jjyrsfA6n6MQ7kNvwFiK-b2&_nc_oc=AdpyIEnP1gQ_O-99Qg2KD26I3MX_Q25OeDKpQR1c7aGRKuMWyOmjS1TS4KxxZbwItcs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=OljA6O75p_3L4N0tVF5T4A&_nc_ss=7a22e&oh=00_Af-9QEnSX9TsKo3KJW9bEr4_OdfhuegMkLOHyECPkfA3Dw&oe=6A2ADE81" alt="" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="container">
+    <h2 class="section-title">Kata <em>Pelanggan</em> 💕</h2>
+    <div class="testi-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <blockquote>"Bolu Lapsur-nya enak banget! Lembut, manis pas, gak bikin enek. Anak-anak juga doyan. Pizza-nya juga juara. Pasti repeat order lagi! 😍"</blockquote>
+      <cite>— Pelanggan Setia Harum Bakery</cite>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="container">
+    <div class="section-tag" style="display:inline-block;margin-bottom:16px">Order Yuk</div>
+    <h2 class="section-title">Yuk, <em>Order!</em></h2>
+    <p class="section-sub" style="margin:0 auto 32px">Klik WhatsApp atau via DM Instagram. Pickup di lokasi atau delivery via GoSend/Maxim. 🛵</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="lbl">Lokasi</div>
+        <div class="val">Sengkuang Raya, Batu Ampar</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="lbl">WhatsApp</div>
+        <div class="val">0896-2688-0009</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">🛵</div>
+        <div class="lbl">Delivery</div>
+        <div class="val">GoSend / Maxim</div>
+      </div>
+    </div>
+    <a href="https://wa.me/6289626880009?text=Halo%20Harum%20Bakery!%20Saya%20mau%20order" class="btn btn-warm" target="_blank">💬 Chat WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>HARUM BAKERY</h4>
+      <p>Roti Homemade, Pizza, Korean Garlic Cheese. Fresh from oven setiap orderan. Sudah melayani pelanggan di Batam sejak 2023.</p>
+    </div>
+    <div>
+      <h4>Menu</h4>
+      <a href="#products">Menu Pilihan</a><br>
+      <a href="#about">Tentang</a><br>
+      <a href="#order">Pesan</a>
+    </div>
+    <div>
+      <h4>Kontak</h4>
+      <a href="https://www.instagram.com/harumbakery27/" target="_blank">📸 @harumbakery27</a><br>
+      <a href="https://wa.me/6289626880009" target="_blank">💬 +62 896-2688-0009</a>
+    </div>
+  </div>
+  <div class="container footer-bot">
+    <span>&copy; 2026 Harum Bakery — Batam</span>
+    <span>Website by BOSS Web</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+})
+</script>
+</body>
+</html>
